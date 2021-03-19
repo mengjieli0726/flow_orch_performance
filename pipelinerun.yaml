@@ -1,0 +1,22 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: pr-job-activity-
+  namespace: tekton-job
+spec:
+  pipelineSpec:
+    tasks:
+    - name: job-activity1
+      params:
+      - name: project_id
+        value: 828d13e0-e2cc-4eaa-a34e-101c653da6e9
+      - name: space_id
+        value: ""
+      - name: job_id
+        value: b90ee851-a3e1-42f0-bc4e-fbc96c285480
+      - name: token
+        value: eyJraWQiOiIyMDIxMDMwMTE0NTYiLCJhbGciOiJSUzI1NiJ9.eyJpYW1faWQiOiJJQk1pZC0yNzAwMDcyV1dLIiwiaWQiOiJJQk1pZC0yNzAwMDcyV1dLIiwicmVhbG1pZCI6IklCTWlkIiwianRpIjoiYzI1ZmM1ZDItYWFkNS00YzRkLTgzYjktMGY0YzgzZTQ0ZTI2IiwiaWRlbnRpZmllciI6IjI3MDAwNzJXV0siLCJnaXZlbl9uYW1lIjoiSmluIENoaSIsImZhbWlseV9uYW1lIjoiSGUiLCJuYW1lIjoiSmluIENoaSBIZSIsImVtYWlsIjoiaGVqaW5jaGlAY24uaWJtLmNvbSIsInN1YiI6ImhlamluY2hpQGNuLmlibS5jb20iLCJhdXRobiI6eyJzdWIiOiJoZWppbmNoaUBjbi5pYm0uY29tIiwiaWFtX2lkIjoiaWFtLTI3MDAwNzJXV0siLCJuYW1lIjoiSmluIENoaSBIZSIsImdpdmVuX25hbWUiOiJKaW4gQ2hpIiwiZmFtaWx5X25hbWUiOiJIZSIsImVtYWlsIjoiaGVqaW5jaGlAY24uaWJtLmNvbSJ9LCJhY2NvdW50Ijp7InZhbGlkIjp0cnVlLCJic3MiOiJhZmE0YzJiOTEzZjE0YzVhYWI3MDk3MGI4YWMxN2JlYyIsImZyb3plbiI6dHJ1ZX0sImlhdCI6MTYxNDc1NjcwNywiZXhwIjoxNjE0NzYwMzA3LCJpc3MiOiJodHRwczovL2lhbS50ZXN0LmNsb3VkLmlibS5jb20vaWRlbnRpdHkiLCJncmFudF90eXBlIjoidXJuOmlibTpwYXJhbXM6b2F1dGg6Z3JhbnQtdHlwZTphcGlrZXkiLCJzY29wZSI6ImlibSBvcGVuaWQiLCJjbGllbnRfaWQiOiJkZWZhdWx0IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.hayj5fDoqCxL0aJUrAyitCBuhX4fyMV0EBZPIVjmLaUuTSJbV_5Vhldad44qP_s2La_bRZMDb02RqTu73Iav9z-ze84-GLBYZNVjMH1MJJnE4wnD6x9mtELsa-zFBB1U5OsJwfetTNh4Ip7ip6UMwKu7SF-jxBbo-IMvMOBCZNmm6g_S9om5x3piYo7IQ7XGXVEOeEYKXfmpHuwgo_NHXvX6dhqKIT6KlKuZGyENalu2AHXFHeUoJ-P1P1AleEbXU0_wlJWZk3juGF9Y9fAesAK6Wgu5tubhAV1T74Cz_unTTsozqUORvfXT8QzFrROGF3e80Vfky9Z6OwQuH9Mm7g
+      taskRef:
+        apiVersion: custom.tekton.dev/v1alpha1
+        kind: Job
+        name: job
